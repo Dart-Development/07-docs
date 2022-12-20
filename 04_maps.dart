@@ -22,7 +22,17 @@ main() {
   person.remove('country');
   print('remove: $person');
 
-  person.removeWhere((key, value) => key != 'name');
+  // person.removeWhere((key, value) => key != 'name');
 
   print('removeWhere: $person');
+
+  person.forEach((key, value) {
+    print('key: $key - value: $value');
+  });
+
+  final newMap = person.map((key, value) {
+    return MapEntry(key, value.toString().toUpperCase());
+  });
+
+  print('person Map: $newMap');
 }
